@@ -38,6 +38,9 @@ public class EditorActivity extends AppCompatActivity implements DatePickerDialo
     // TextView field used to display date selected from DatePicker
     private TextView mDateText;
 
+    // String to store the entry from EditText mDurationEditText.
+    private String durationString;
+
     /**
      * Actual habit activity being performed.
      * Only possible values in the HabitContract.java file: {@link HabitEntry#HABIT_UNKNOWN},
@@ -129,12 +132,28 @@ public class EditorActivity extends AppCompatActivity implements DatePickerDialo
         mDateText.setText(formattedDate);
     }
 
+    // Verify habit duration has been entered.
+    private boolean durationEntered() {
+        // Retrieve the entry from the EditText field for duration and store in String.
+        durationString = mDurationEditText.getText().toString().trim();
+
+        // Check string to verify user has made an entry.
+        if (durationString.equals("")) {
+            return false;
+        }
+        else {
+            return true;
+        }
+    }
+
     // Get user input from editor and save new habits to database.
     private void insertHabit() {
+
         // Read from input fields
         // Use trim to eliminate leading or trailing white space
-        String dateString = mDateText.getText().toString().trim();
-        String durationString = mDurationEditText.getText().toString().trim();
+        String dateString = mDateText.getText().toString();
+        //durationString = mDurationEditText.getText().toString().trim();
+
         int duration = Integer.parseInt(durationString);
 
         // Create database helper
@@ -153,11 +172,6 @@ public class EditorActivity extends AppCompatActivity implements DatePickerDialo
         // Insert a new row for a habit in the database, returning the ID of that new row.
         long newRowId = db.insert(HabitEntry.TABLE_NAME, null, values);
 
-        // Verify habit duration has been entered.
-        if (mDurationEditText == null|| mDurationEditText.equals("")){
-            Toast.makeText(EditorActivity.this, getString(R.string.no_duration_entered),
-                    Toast.LENGTH_SHORT).show();
-        }
 
         // Show a toast message depending on whether or not the insertion was successful
         if (newRowId == -1) {
@@ -181,9 +195,15 @@ public class EditorActivity extends AppCompatActivity implements DatePickerDialo
     public boolean onOptionsItemSelected(MenuItem item) {
         // User clicked on a menu option in the app bar overflow menu
         if (item.getItemId() == R.id.action_save) {
-            insertHabit();
-            finish();
 
+            // Warn user that no entry has been made for duration
+            if (!durationEntered()) {
+                Toast.makeText(EditorActivity.this, getString(R.string.no_duration_entered),
+                        Toast.LENGTH_SHORT).show();
+            } else {
+                insertHabit();
+                finish();
+            }
         }
         return super.onOptionsItemSelected(item);
     }
