@@ -140,8 +140,7 @@ public class EditorActivity extends AppCompatActivity implements DatePickerDialo
         // Check string to verify user has made an entry.
         if (durationString.equals("")) {
             return false;
-        }
-        else {
+        } else {
             return true;
         }
     }
@@ -149,11 +148,10 @@ public class EditorActivity extends AppCompatActivity implements DatePickerDialo
     // Get user input from editor and save new habits to database.
     private void insertHabit() {
 
-        // Read from input fields
-        // Use trim to eliminate leading or trailing white space
+        // Retrieve date input and convert to a string.
         String dateString = mDateText.getText().toString();
-        //durationString = mDurationEditText.getText().toString().trim();
 
+        // Convert duration string to an int.
         int duration = Integer.parseInt(durationString);
 
         // Create database helper
@@ -171,7 +169,6 @@ public class EditorActivity extends AppCompatActivity implements DatePickerDialo
 
         // Insert a new row for a habit in the database, returning the ID of that new row.
         long newRowId = db.insert(HabitEntry.TABLE_NAME, null, values);
-
 
         // Show a toast message depending on whether or not the insertion was successful
         if (newRowId == -1) {
