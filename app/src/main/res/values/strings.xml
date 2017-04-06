@@ -1,0 +1,58 @@
+<resources>
+    <string name="app_name">Habit Tracker</string>
+
+    <!-- Label for overflow menu option to insert fake habit data into the app [CHAR LIMIT=20] -->
+    <string name="action_insert_dummy_data">Insert Dummy Data</string>
+
+    <!-- Label for overflow menu option that deletes all habit data in the app [CHAR LIMIT=20] -->
+    <string name="action_delete_all_entries">Delete All Habits</string>
+
+    <!-- Title for the activity to add a new habit [CHAR LIMIT=20] -->
+    <string name="editor_activity_title_new_habit">Add Habit Activity</string>
+
+    <!-- Label for editor menu option to save habit and leave editor [CHAR LIMIT=20] -->
+    <string name="action_save">Save</string>
+
+    <!-- Label for editor overflow menu option that deletes the current habit [CHAR LIMIT=20] -->
+    <string name="action_delete">Delete</string>
+
+    <!-- Label for habit date of attributes in the editor [CHAR LIMIT=30] -->
+    <string name="habit_date">Date</string>
+
+    <!-- Text instruction to tap calender for habit date activity [CHAR LIMIT=30] -->
+    <string name="enter_habit_date">Tap calendar</string>
+
+    <!-- Label for gender information in the editor [CHAR LIMIT=30] -->
+    <string name="category_habit">Habit</string>
+
+    <!-- Label for measurement information in the editor [CHAR LIMIT=30] -->
+    <string name="habit_duration">Time</string>
+
+    <!-- Text hint for name field in the editor [CHAR LIMIT=30] -->
+    <string name="hint_habit_duration">Duration</string>
+
+    <!-- Units for duration of the habit activity (minutes) [CHAR LIMIT=5] -->
+    <string name="unit_habit_duration">minutes</string>
+
+    <!-- Text to display when no duration has been entered [CHAR LIMIT=NONE] -->
+    <string name="no_duration_entered">Please enter a duration!</string>
+
+    <!-- Label for dropdown menu option if the habit is Watching TV [CHAR LIMIT=20] -->
+    <string name="habit_watchingTV">Watching TV</string>
+
+    <!-- Label for dropdown menu option if the habit is Self Development [CHAR LIMIT=20] -->
+    <string name="habit_selfDevelopment">Self Development</string>
+
+    <!-- Label for dropdown menu option if the habit is to Meditate [CHAR LIMIT=20] -->
+    <string name="habit_meditate">Meditate</string>
+
+    <!-- Label for dropdown menu option if the habit is Goal Tracking [CHAR LIMIT=20] -->
+    <string name="habit_goalTracking">Goal Tracking</string>
+
+    <!-- Label for dropdown menu option if the habit is Networking [CHAR LIMIT=20] -->
+    <string name="habit_networking">Networking</string>
+
+    <!-- Label for dropdown menu option if the habit is Exercise [CHAR LIMIT=20] -->
+    <string name="habit_exercise">Exercise</string>
+
+</resources>

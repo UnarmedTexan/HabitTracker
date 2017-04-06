@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".EditorActivity">
+
+    <!-- Date field -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!-- Label -->
+        <TextView
+            style="@style/CategoryStyle"
+            android:paddingBottom="16dp"
+            android:text="@string/habit_date" />
+
+        <!-- Input fields -->
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:paddingLeft="4dp">
+
+            <!-- Date selected field -->
+            <TextView
+                android:id="@+id/habit_date"
+                style="@style/EditorFieldStyle"
+                android:hint="@string/enter_habit_date" />
+
+            <!-- Clickable calendar to set date -->
+            <ImageView
+                android:id="@+id/calendar"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="8dp"
+                android:onClick="showDatePickerDialog"
+                android:src="@drawable/calendar_icon_blue_sm" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <!-- Habit category -->
+    <LinearLayout
+        android:id="@+id/container_habit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!-- Label -->
+        <TextView
+            style="@style/CategoryStyle"
+            android:text="@string/category_habit" />
+
+        <!-- Input field -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:orientation="vertical">
+
+            <!-- Habit drop-down spinner -->
+            <Spinner
+                android:id="@+id/spinner_habit"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:paddingRight="16dp"
+                android:spinnerMode="dropdown" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- time duration of habit activity -->
+    <LinearLayout
+        android:id="@+id/container_measurement"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!-- Label -->
+        <TextView
+            style="@style/CategoryStyle"
+            android:text="@string/habit_duration" />
+
+        <!-- Input fields -->
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:paddingLeft="4dp">
+
+            <!-- Time field -->
+            <EditText
+                android:id="@+id/edit_habit_duration"
+                style="@style/EditorFieldStyle"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:hint="@string/hint_habit_duration"
+                android:inputType="number" />
+
+            <!-- Units for time (minutes) -->
+            <TextView
+                android:id="@+id/label_time_units"
+                style="@style/EditorUnitsStyle"
+                android:text="@string/unit_habit_duration" />
+        </RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout>

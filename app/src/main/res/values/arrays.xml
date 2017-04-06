@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- These are the options displayed in the Habit drop-down Spinner -->
+    <string-array name="array_habit_options">
+        <item>@string/habit_exercise</item>
+        <item>@string/habit_goalTracking</item>
+        <item>@string/habit_meditate</item>
+        <item>@string/habit_networking</item>
+        <item>@string/habit_selfDevelopment</item>
+        <item>@string/habit_watchingTV</item>
+    </string-array>
+</resources>
