@@ -35,7 +35,7 @@
     <string name="unit_habit_duration">minutes</string>
 
     <!-- Text to display when no duration has been entered [CHAR LIMIT=NONE] -->
-    <string name="no_duration_entered">No duration entered!</string>
+    <string name="no_duration_entered">Please enter the time spent on this habit!</string>
 
     <!-- Label for dropdown menu option if the habit is Watching TV [CHAR LIMIT=20] -->
     <string name="habit_watchingTV">Watching TV</string>
